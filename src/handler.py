@@ -35,4 +35,4 @@ def handler(event):
         return {"error": str(e)}
 
 # Start the RunPod serverless loop
-runpod.serverless.start({"handler
+runpod.serverless.start({"handler": handler})
