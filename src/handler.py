@@ -1,4 +1,4 @@
-mport runpod
+import runpod
 import requests
 import json
 import os
