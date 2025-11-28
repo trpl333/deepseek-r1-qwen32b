@@ -1,3 +1,4 @@
+[![Runpod](https://api.runpod.io/badge/trpl333/deepseek-r1-qwen32b)](https://console.runpod.io/hub/trpl333/deepseek-r1-qwen32b)
 <<<<<<< HEAD
 # deepseek-r1-qwen32b
 Ultra-fast, low-cost, smaller GPU, short phone interactions
