@@ -1,0 +1,18 @@
+{
+  "title": "DeepSeek R1-Qwen32B",
+  "description": "Private DeepSeek-R1-Distill-Qwen-32B model with full safetensors stored in this repository. Runs via vLLM.",
+  "type": "serverless",
+  "icon": "https://example.com/icon.png",
+  "config": {
+    "gpu": "any",
+    "containerDiskInGb": 20,
+    "presets": [
+      {
+        "name": "default",
+        "variables": {
+          "MODEL_PATH": "/workspace"
+        }
+      }
+    ]
+  }
+}
