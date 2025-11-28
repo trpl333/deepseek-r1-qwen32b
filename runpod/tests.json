@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "basic_prompt_test",
+      "input": {
+        "prompt": "Hello",
+        "max_tokens": 10
+      },
+      "timeout": 20000
+    }
+  ]
+}
