@@ -1,15 +1,13 @@
-FROM runpod/worker-vllm:v2.11.0
+FROM runpod/worker-base:latest
 
-# Copy model weights into /workspace (RunPod clones your repo here)
-WORKDIR /workspace
+# Copy RunPod serverless handler files into the container
+COPY .runpod /handler
 
-# Environment variables for vLLM
-ENV MODEL_PATH=/workspace
+# Set handler directory
+WORKDIR /handler
 
-# Start vLLM
-CMD ["python3", "-m", "vllm.entrypoints.openai.api_server", 
-     "--model", "/workspace",
-     "--trust-remote-code",
-     "--dtype", "auto",
-     "--tensor-parallel-size", "1",
-     "--max-model-len", "32768"]
+# Install your dependencies
+RUN pip install torch transformers runpod accelerate
+
+# Start RunPod Serverless worker
+CMD ["python", "-u", "serverless.py"]
