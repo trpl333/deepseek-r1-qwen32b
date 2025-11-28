@@ -1,16 +1,17 @@
 FROM runpod/worker-pytorch:latest
 
-# Copy RunPod serverless handler files
+# Copy RunPod serverless metadata
 COPY .runpod /runpod
 
-# Copy handler logic to /src
-COPY handler.py /src/handler.py
-COPY serverless.py /src/serverless.py
+# Copy handler files to /handler
+COPY handler.py /handler/handler.py
+COPY serverless.py /handler/serverless.py
 
-WORKDIR /src
+# Set working directory
+WORKDIR /handler
 
-# Install model + inference dependencies
+# Install your dependencies
 RUN pip install torch transformers accelerate runpod
 
-# Start serverless worker
+# Start the serverless worker
 CMD ["python3", "-u", "serverless.py"]
