@@ -27,5 +27,3 @@ def handler(event):
 
     result = tokenizer.decode(output_ids[0], skip_special_tokens=True)
     return { "output": result }
-
-runpod.serverless.start({"handler": handler})
