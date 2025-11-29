@@ -1,10 +1,11 @@
+ url=https://github.com/trpl333/deepseek-r1-qwen32b/blob/main/.runpod/tests.json
 {
   "tests": [
     {
-      "name": "basic_prompt_test",
+      "name": "smoke_test",
       "input": {
         "prompt": "Hello",
-        "max_tokens": 10
+        "max_tokens": 1
       },
       "timeout": 20000
     }
