@@ -1,4 +1,4 @@
-url=https://github.com/trpl333/deepseek-r1-qwen32b/blob/main/.runpod/tests.json
+ url=https://github.com/trpl333/deepseek-r1-qwen32b/blob/main/.runpod/tests.json
 {
   "tests": [
     {
