@@ -1,4 +1,4 @@
-FROM runpod/worker-pytorch:latest
+FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-runtime
 
 # Copy RunPod serverless metadata
 COPY .runpod /runpod
@@ -11,7 +11,8 @@ COPY serverless.py /handler/serverless.py
 WORKDIR /handler
 
 # Install your dependencies
-RUN pip install torch transformers accelerate runpod
+RUN pip install --upgrade pip && \
+    pip install torch transformers accelerate runpod
 
 # Start the serverless worker
 CMD ["python3", "-u", "serverless.py"]
